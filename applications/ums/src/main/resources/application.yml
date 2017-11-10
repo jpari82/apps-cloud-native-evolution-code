@@ -1,2 +1,4 @@
 server:
   port: 8080
+billing:
+  recurring: http://localhost:8081
