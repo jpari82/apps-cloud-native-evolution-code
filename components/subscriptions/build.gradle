@@ -19,10 +19,20 @@ repositories {
 }
 
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR2"
+        mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:1.3.0.RELEASE"
+    }
+}
+
+
 dependencies {
     compile(project(":components/billing"))
     compile(project(":components/email"))
-
     compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
     compile("javax.persistence:persistence-api:1.0")
 }
+
+

@@ -5,6 +5,4 @@ spring:
      name: billing
 #management:security:enabled: false
 
-security:
-  basic:
-    enabled: false
+#security:basic:enabled: false
