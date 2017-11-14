@@ -31,9 +31,11 @@ dependencyManagement {
 
 dependencies {
 	compile(project(":components/payments"))
+	compile(project(":components/billing"))
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry')
 	compile("io.pivotal.spring.cloud:spring-cloud-services-starter-circuit-breaker")
 	compile("io.pivotal.spring.cloud:spring-cloud-services-starter-config-client")
+	compile("org.springframework.amqp:spring-rabbit:1.6.6.RELEASE")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

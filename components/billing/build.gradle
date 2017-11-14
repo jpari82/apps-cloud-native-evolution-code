@@ -30,5 +30,6 @@ dependencies {
     compile(project(":components/payments"))
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+    compile("org.springframework.amqp:spring-rabbit:1.6.6.RELEASE")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

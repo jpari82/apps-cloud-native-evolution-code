@@ -3,21 +3,15 @@ package com.example.billing;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-public class BillingClient {
+public class HttpClient implements Client {
 
-    private static final Logger logger = LoggerFactory.getLogger(BillingClient.class);
+    private static final Logger logger = LoggerFactory.getLogger(HttpClient.class);
 
     private RestTemplate restTemplate;
 
-    public BillingClient(RestTemplate restTemplate){
+    public HttpClient(RestTemplate restTemplate){
         this.restTemplate = restTemplate;
     }
 

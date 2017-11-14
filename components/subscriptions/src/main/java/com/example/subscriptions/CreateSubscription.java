@@ -1,18 +1,18 @@
 package com.example.subscriptions;
 
-import com.example.billing.BillingClient;
+import com.example.billing.Client;
 import com.example.email.SendEmail;
 
 public class CreateSubscription {
 
     //private final ChargeUser chargeUser;
-    private BillingClient billingClient;
+    private Client billingClient;
 
     private final SendEmail emailSender;
     private final SubscriptionRepository subscriptions;
 
     public CreateSubscription(
-            BillingClient billingClient,
+            Client billingClient,
             SendEmail emailSender, SubscriptionRepository subscriptions) {
 
         this.billingClient = billingClient;

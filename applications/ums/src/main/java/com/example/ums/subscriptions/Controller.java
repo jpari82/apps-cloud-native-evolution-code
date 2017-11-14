@@ -1,6 +1,6 @@
 package com.example.ums.subscriptions;
 
-import com.example.billing.BillingClient;
+import com.example.billing.Client;
 import com.example.email.SendEmail;
 import com.example.payments.RecurlyGateway;
 import com.example.subscriptions.CreateSubscription;
@@ -25,7 +25,7 @@ public class Controller {
     SubscriptionRepository subscriptions;
 
     @Autowired
-    BillingClient billingClient;
+    Client billingClient;
 
     @RequestMapping(method = RequestMethod.GET)
     public Iterable<Subscription> index() {

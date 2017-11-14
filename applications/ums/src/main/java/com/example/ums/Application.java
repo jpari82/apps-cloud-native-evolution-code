@@ -1,9 +1,10 @@
 package com.example.ums;
 
-import com.example.billing.BillingClient;
+import com.example.billing.RabbitBillingClient;
 import com.example.subscriptions.SubscriptionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -62,8 +63,8 @@ public class Application implements CommandLineRunner {
     }
 
     @Bean
-    public BillingClient getBillingClient(@Autowired RestTemplate restTemplate) {
-        return new BillingClient(restTemplate);
+    public RabbitBillingClient getRabbitBillingClient(@Value("${billingQueueName}")String queueName, @Autowired RabbitTemplate rabbitTemplate) {
+        return new RabbitBillingClient(queueName, rabbitTemplate);
     }
 
 }
